@@ -1,0 +1,20 @@
+.navbar {
+  background-color: rgba(211, 211, 211, 0.199);
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  user-select: none;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #d22626;
+  transition: transform .8s, box-shadow 0.3s;
+  transform: translateY(-5px);
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+}
