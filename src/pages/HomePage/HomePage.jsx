@@ -1,63 +1,64 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './HomePage.scss';
-// import ContactForm from '../../components/ContactForm/ContactForm';
+
 
 
 export default function HomePage() {
     const initialText = "Hi, I'm Kristin!";
     const typingSpeed = 100;
-  
+
     const [displayedText, setDisplayedText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
-  
+
     useEffect(() => {
         let typingInterval;
-    
-        if (currentIndex < initialText.length) {
-          typingInterval = setInterval(() => {
-            setDisplayedText((prevText) => prevText + initialText[currentIndex]);
-            setCurrentIndex((prevIndex) => prevIndex + 1);
-          }, typingSpeed);
-        } else {
-          clearInterval(typingInterval);
-        }
-    
-        return () => {
-          clearInterval(typingInterval);
-        };
-      }, [currentIndex]);
 
-  
-    const scrollToTop = () => {
-      if (document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0) {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        });
-        setTimeout(scrollToTop, 1000);
-      }
-    };
-  
-    useEffect(() => {
-      const scrollBtn = document.getElementById('scrollBtn');
-      const handleScroll = () => {
-        if (
-          document.body.scrollTop > 700 ||
-          document.documentElement.scrollTop > 700
-        ) {
-          scrollBtn.style.display = 'block';
+        if (currentIndex < initialText.length) {
+            typingInterval = setInterval(() => {
+                setDisplayedText((prevText) => prevText + initialText[currentIndex]);
+                setCurrentIndex((prevIndex) => prevIndex + 1);
+            }, typingSpeed);
         } else {
-          scrollBtn.style.display = 'none';
+            clearInterval(typingInterval);
         }
-      };
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
+
+        return () => {
+            clearInterval(typingInterval);
+        };
+    }, [currentIndex]);
+
+
+    const scrollToTop = () => {
+        if (document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+            setTimeout(scrollToTop, 1000);
+        }
+    };
+
+    useEffect(() => {
+        const scrollBtn = document.getElementById('scrollBtn');
+        const handleScroll = () => {
+            if (
+                document.body.scrollTop > 700 ||
+                document.documentElement.scrollTop > 700
+            ) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
-      
+
     return (
         <>
+
             <header className="header py-5">
                 <div className="container px-5">
                     <div className="row gx-5 align-items-center">
@@ -75,7 +76,7 @@ export default function HomePage() {
                             {/* <!-- Header profile picture--> */}
                             <div className="d-flex justify-content-center mt-5 mt-xxl-0">
                                 <div className="profile bg-gradient-primary-to-secondary">
-                                    <img className="profile-img" src="assets/images/profile-2.png" alt="..." loading="lazy" />
+                                    <img className="profile-img" src="assets/images/profile-2.png" alt="..." />
                                     <div className="dots-1">
                                         {/* <!-- SVG Dots--> */}
                                         <svg
@@ -372,10 +373,10 @@ export default function HomePage() {
                     </div>
                 </div>
             </header>
-            <hr className="featurette-divider">
-            </hr>
+            {/* <hr className="featurette-divider">
+            </hr> */}
             {/* <!-- About Section--> */}
-            <section className="py-5">
+            {/* <section className="py-5">
                 <div className="container about-container" id="about">
                     <div className="row gx-6 justify-content-center">
                         <div className="col-xxl-10">
@@ -397,11 +398,11 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <hr className="featurette-divider">
             </hr>
-
+            
             <section id="skills" className="py-5">
                 <div className="container">
                     <div className="row">
@@ -474,7 +475,7 @@ export default function HomePage() {
                     </div>
                     <div className="row justify-content-center">
 
-                    <div className="col-lg-5">
+                        <div className="col-lg-5">
                             <a className="portfolio-item project-card" href="https://www.re-furred.com/" target="_blank" rel="noreferrer">
                                 <div className="rectangle-container refurred">
                                     <img className="img-fluid refurred-img" src="assets/images/dogballoons.jpg" alt="refurred Project" />
@@ -486,15 +487,15 @@ export default function HomePage() {
                                 </div>
                             </a>
                         </div>
-                        
-                        </div>
-                        
-                        <hr />
 
-                        <div className="content-section-heading text-center">
+                    </div>
+
+                    <hr />
+
+                    <div className="content-section-heading text-center">
                         <h1 className="mt-5 mb-4">Class Projects</h1>
                     </div>
-                        <div className="row justify-content-center">
+                    <div className="row justify-content-center">
                         <div className="col-lg-4">
                             <a className="portfolio-item project-card" href="https://count-me-in.herokuapp.com/" target="_blank" rel="noreferrer">
                                 <div className="rectangle-container">
@@ -525,34 +526,11 @@ export default function HomePage() {
                 </div>
             </section>
 
-
-
-
-
-            <hr className="featurette-divider" />
-
-            <footer className="row" id="contact">
-                <div className="col text-center">
-                    <h1 className="">Get in touch!</h1>
-                    {/* <ContactForm /> */}
-
-                    <a className="btn text-gradient" href="https://www.linkedin.com/in/kristin-stockley/" target="_blank" rel="noreferrer">
-                        <i className="bi bi-linkedin text-gradient"></i>
-                    </a>
-                    <a className="btn text-gradient" href="mailto:kbstockley@gmail.com" target="_blank" rel="noreferrer">
-                        <i className="bi bi-envelope text-gradient"></i>
-                    </a>
-                    <a className="btn text-gradient" href="https://github.com/kristinstockley" target="_blank" rel="noreferrer">
-                        <i className="bi bi-github text-gradient"></i>
-                    </a>
-                </div>
+            <footer>
+                <button className="scroll-to-top rounded" id="scrollBtn" onClick={scrollToTop}>
+                    <i className="fas fa-angle-up"></i>
+                </button>
             </footer>
-
-            <button className="scroll-to-top rounded" id="scrollBtn" onClick={scrollToTop}>
-        <i className="fas fa-angle-up"></i>
-      </button>
-
-
 
 
 
