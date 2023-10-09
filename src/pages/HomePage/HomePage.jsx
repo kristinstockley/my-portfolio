@@ -471,11 +471,11 @@ export default function HomePage() {
             <section className="content-section" id="projects">
                 <div className="container px-4">
                     <div className="content-section-heading text-center">
-                        <h1 className="mt-5 mb-4">Current Projects</h1>
+                        <h1 className="mt-5 mb-4">Current Project</h1>
                     </div>
                     <div className="row justify-content-center">
 
-                        <div className="col-lg-5">
+                        <div className="col-lg-4">
                             <a className="portfolio-item project-card" href="https://www.re-furred.com/" target="_blank" rel="noreferrer">
                                 <div className="rectangle-container refurred">
                                     <img className="img-fluid refurred-img" src="assets/images/dogballoons.jpg" alt="refurred Project" />
@@ -502,7 +502,7 @@ export default function HomePage() {
                                     <img className="img-fluid" src="assets/images/party.jpg" alt="CountMeIn Project" />
                                     <div className="project-info">
                                         <h3 className="project-title">CountMeIn</h3>
-                                        <small className="project-title-two">MERN | Class Project</small>
+                                        <small className="project-title-two">MERN</small>
                                         <p className="project-description">Track upcoming occasions with personal countdowns</p>
                                     </div>
                                 </div>
@@ -515,8 +515,8 @@ export default function HomePage() {
                                     <img className="img-fluid" src="assets/images/confetti-portfolio.jpg" alt="SwiftSeats Project" />
                                     <div className="project-info">
                                         <h3 className="project-title">SwiftSeats</h3>
-                                        <small className="project-title-two">Python | Django | Class Project</small>
-                                        <p className="project-description">Concert tracker, wish lists, and photo storage for Swifties</p>
+                                        <small className="project-title-two">Python | Django</small>
+                                        <p className="project-description">Concert tracker and photo storage for Swifties</p>
                                     </div>
                                 </div>
                             </a>
