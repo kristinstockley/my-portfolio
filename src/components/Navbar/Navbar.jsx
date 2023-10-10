@@ -21,12 +21,12 @@ export default function NavBar() {
           <li className="nav-item">
               <Link to="/about" className="nav-link">About</Link> 
           </li>
+          <li className="nav-item">
+              <Link to="/projects" className="nav-link">Projects</Link> 
+          </li>
             <li className="nav-item">
                 <ResumeModal />
             </li>
-            {/* <li className="nav-item">
-              <a className="nav-link" href="#projects">Projects</a>
-            </li> */}
             <li className="nav-item">
               <Link to="/contact" className="nav-link">Contact</Link> 
           </li>
