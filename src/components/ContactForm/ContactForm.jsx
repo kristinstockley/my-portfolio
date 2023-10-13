@@ -22,8 +22,8 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        await axios.post('http://localhost:3001/submit-form', formData);
-        alert('Form submitted successfully');
+      await axios.post('http://localhost:3001/submit-form', formData);
+      alert('Form submitted successfully');
       setFormData({
         name: '',
         email: '',
@@ -39,32 +39,35 @@ export default function ContactForm() {
     <div className="contact-form">
       <form onSubmit={handleSubmit}>
         <div className="form-group text-center">
-          <label htmlFor="name">Name:</label>
+          {/* <label htmlFor="name">Name:</label> */}
           <input
             type="text"
             name="name"
             id="name"
+            placeholder='First and Last Name'
             value={formData.name}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group text-center">
-          <label htmlFor="email">Email:</label>
+          {/* <label htmlFor="email">Email:</label> */}
           <input
             type="email"
             name="email"
             id="email"
+            placeholder='Email'
             value={formData.email}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group text-center">
-          <label htmlFor="message">Message:</label>
+          {/* <label htmlFor="message">Message:</label> */}
           <textarea
             name="message"
             id="message"
+            placeholder='Message'
             value={formData.message}
             onChange={handleChange}
             rows="4"
@@ -72,7 +75,7 @@ export default function ContactForm() {
           ></textarea>
         </div>
         <div className="text-center">
-        <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>

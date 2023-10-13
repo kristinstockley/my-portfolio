@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './HomePage.scss';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -60,7 +62,7 @@ export default function HomePage() {
         <>
 
             <header className="header py-5">
-                <div className="container px-5">
+                <div className="container px-5 ">
                     <div className="row gx-5 align-items-center">
                         <div className="col-xxl-5">
 
@@ -69,7 +71,14 @@ export default function HomePage() {
                                 <div className="badge mb-4">
                                     <div className="text-uppercase">Customize &middot; Optimize &middot; Modernize</div>
                                 </div>
-                                <h1 className="display-3 fw-bolder mb-0"><span className="d-inline" id="typing-text">{displayedText}</span></h1>
+
+                                <h1 className="display-3 fw-bolder mb-4"><span className="d-inline" id="typing-text">{displayedText}</span></h1>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                    <Link to="/projects" className="btn btn-danger btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Projects</Link>
+                                    <Link to="/resume" className="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder">Resume</Link>
+
+                                </div>
+
                             </div>
                         </div>
                         <div className="col-xxl-7">
@@ -373,10 +382,11 @@ export default function HomePage() {
                     </div>
                 </div>
             </header>
-            {/* <hr className="featurette-divider">
-            </hr> */}
-            {/* <!-- About Section--> */}
-            {/* <section className="py-5">
+
+
+            <hr className="featurette-divider">
+            </hr>
+            <section className="py-5">
                 <div className="container about-container" id="about">
                     <div className="row gx-6 justify-content-center">
                         <div className="col-xxl-10">
@@ -398,9 +408,9 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            <hr className="featurette-divider">
+            {/* <hr className="featurette-divider">
             </hr>
             
             <section id="skills" className="py-5">
@@ -465,9 +475,9 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <hr className="featurette-divider"></hr>
+            <hr className="featurette-divider"></hr> */}
 
-            {/* <!-- Projects--> */}
+            {/* <!-- Projects-->
             <section className="content-section" id="projects">
                 <div className="container px-4">
                     <div className="content-section-heading text-center">
@@ -524,7 +534,7 @@ export default function HomePage() {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <footer>
                 <button className="scroll-to-top rounded" id="scrollBtn" onClick={scrollToTop}>

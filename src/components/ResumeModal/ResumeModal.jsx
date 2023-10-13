@@ -14,9 +14,11 @@ export default function ResumeModal () {
 
   return (
     <div>
-      <div onClick={openModal} className="nav-link">
-        Resume
-      </div>
+
+      <button className="btn btn-outline-dark px-4 py-3 mx-5" onClick={openModal}>
+            <div className="d-inline-block bi bi-download me-2"></div>
+            View Resume
+          </button>
       {showModal && (
         <div className="modal">
           <div className="modal-content">
