@@ -1,9 +1,12 @@
+@import '../../App.scss';
+
+
 .contact-form {
     padding: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f8f8f8;
-    width: 30%;
+    width: 35%;
     margin: 0 auto;
   
     .form-group {
@@ -30,7 +33,7 @@
     }
   
     button[type="submit"] {
-      background-color: purple;
+      background-color: $primary-color;
       color: #fff;
       border: none;
       padding: .5rem 1rem;
@@ -40,13 +43,13 @@
     }
   
     button[type="submit"]:hover {
-      background-color: teal;
+      background-color: $secondary-color;
     }
   }
   
   @media (max-width: 576px) {
     .contact-form{
-      width: 100%;
+      width: 100vw;
     }
 
   }

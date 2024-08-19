@@ -1,4 +1,5 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { Link } from 'react-router-dom';
 import 'react-vertical-timeline-component/style.min.css';
 import { FaBriefcase, FaGraduationCap, FaStar } from 'react-icons/fa';
 import { BiSolidCertification, BiLogoDjango, BiLogoReact, BiSolidBriefcase } from 'react-icons/bi';
@@ -11,28 +12,51 @@ import ResumeModal from '../../components/ResumeModal/ResumeModal';
 export default function MyVerticalTimeline() {
   return (
     <>
+      <div className='vertical-timeline'>
       <div className="d-flex align-items-center justify-content-between mb-4 mx-5 mt-5">
         <h1 className="fw-bolder mb-0 mx-5">My Tech Timeline</h1>
-        {/* <a href="/assets/images/Kristin Stockley-Resume.pdf" download="Kristin Stockley's Resume.pdf"> */}
 
-            <ResumeModal />
-        {/* </a> */}
+        <ResumeModal />
+
       </div>
       <hr />
+
       <VerticalTimeline>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: 'purple' }}
+          className="vertical-timeline-element--work text-black"
+          contentStyle={{ background: 'purple', color: 'white' }}
+
+          date="December 2023 - Present"
+          iconStyle={{ background: '#b11925', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  purple' }}
+
+          icon={<FaBriefcase />}
+
+        >
+          <h3 className="vertical-timeline-element-title">Full Stack Developer</h3>
+          <h5 className="vertical-timeline-element-subtitle">Harvest Growth Strategies</h5>
+          <ul className='text-white my-3'>
+            <li className='mb-2'>
+              Sole developer responsible for all technical decisions and implementations across multiple projects, ensuring alignment with business goals and requirements under tight deadlines            </li>
+            <li className='mb-2'>
+              Created and deployed QR code-based digital menus for local restaurants, including <Link to='https://thepointofcorpuschristi.com/' target='_blank' className='text-white link-underline-light'>The Point of Corpus Christi</Link> and <Link to='https://laplayabythebay.com/' target='_blank' className='text-white link-underline-light'>La Playa By The Bay</Link>, using the MERN stack, significantly enhancing customer experience and streamlining operations            </li>
+            <li>
+              Designed and implemented an intuitive admin dashboard for menu management, enabling seamless CRUD operations on menu items, resulting in efficient real-time updates            </li>
+          </ul>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: '#fbfbfb' }}
+
           date="September 2023 - Present"
-          iconStyle={{ background: '#d22626', color: '#fff' }}
+          iconStyle={{ background: 'purple', color: '#fff' }}
           icon={<FaBriefcase />}
         >
-          <h3 className="qa-vertical-timeline-element-title">Quality Assurance Analyst Intern</h3>
-          <h5 className="qa-vertical-timeline-element-subtitle">Oigetit</h5>
+          <h3 className="qa-vertical-timeline-element-title text-black">Quality Assurance Analyst Intern</h3>
+          <h5 className="qa-vertical-timeline-element-subtitle text-black">Oigetit</h5>
 
-          <ul className='text-light'>
-            <li>
+          <ul className='text-black my-3'>
+            <li className='mb-2'>
               Conduct comprehensive quality assurance testing to identify and document software bugs
             </li>
             <li>
@@ -40,44 +64,13 @@ export default function MyVerticalTimeline() {
             </li>
           </ul>
         </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: '#fbfbfb' }}
-          date="August 2023 - Present"
-          iconStyle={{ background: 'purple', color: '#fff' }}
-          icon={<MdVolunteerActivism />}
-        >
-          <h3 className="vertical-timeline-element-title">Software Engineer Volunteer</h3>
-          <h5 className="vertical-timeline-element-subtitle">Hack for LA</h5>
 
-          <ul>
-            <li>
-              Actively engage with Hack for LA's GitHub project board to pick up issues, enhancing the website's functionality and user experience
-            </li>
-            <li>
-              Utilize Docker to set up local development environments, allowing for efficient code review, testing, and debugging
-            </li>
-          </ul>
-        </VerticalTimelineElement>
-        {/* <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: '#fbfbfb' }}
-          date="July 2023 - Present"
-          iconStyle={{ background: 'teal', color: '#fff' }}
-          icon={<BiLogoReact />}
 
-        >
-          <h3 className="vertical-timeline-element-title">refurred</h3>
-          <h5 className="vertical-timeline-element-subtitle">Group Project: Front-End Developer</h5>
-          <p>
-            <a href="https://www.re-furred.com/">re-furred.com</a>
-          </p>
-        </VerticalTimelineElement> */}
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           contentStyle={{ background: '#fbfbfb' }}
           date="March 2023 - June 2023"
-          iconStyle={{ background: '#d22626', color: '#fff' }}
+          iconStyle={{ background: '#b11925', color: '#fff' }}
           icon={<BiSolidCertification />}
 
         >
@@ -140,8 +133,8 @@ export default function MyVerticalTimeline() {
           <h3 className="vertical-timeline-element-title">Promotional Products Manager</h3>
           <h5 className="vertical-timeline-element-subtitle">FASTSIGNS</h5>
 
-          <ul>
-            <li>
+          <ul className='my-3'>
+            <li className='mb-2'>
               Orchestrated the management of a promotional products department including drinkware, office items, and event giveaways, resulting in a 15% growth in brand equity
             </li>
             <li>
@@ -153,14 +146,14 @@ export default function MyVerticalTimeline() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#fbfbfb' }}
           date="April 2018 - February 2019"
-          iconStyle={{ background: '#d22626', color: '#fff' }}
+          iconStyle={{ background: '#b11925', color: '#fff' }}
           icon={<BiSolidBriefcase />}
         >
           <h3 className="vertical-timeline-element-title">Convention Services Manager</h3>
           <h5 className="vertical-timeline-element-subtitle">Visit Corpus Christi</h5>
 
-          <ul>
-            <li>
+          <ul className='my-3'>
+            <li className='mb-2'>
               Achieved a 95% customer satisfaction rate by ensuring end-to-end customer satisfaction, from initial turnover from sales through the post-event phase
             </li>
             <li>
@@ -224,7 +217,8 @@ export default function MyVerticalTimeline() {
           iconStyle={{ background: '#d22626', color: '#fff' }}
           icon={<FaStar />}
         /> */}
-      </VerticalTimeline>
+        </VerticalTimeline>
+        </div>
     </>
   )
 }

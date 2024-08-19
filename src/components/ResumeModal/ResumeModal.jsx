@@ -27,7 +27,7 @@ export default function ResumeModal () {
             </span>
             <iframe
               title="Resume"
-              src="/assets/images/Kristin Stockley-Resume.pdf"
+              src="/assets/images/Kristin Stockley - Resume.pdf"
               width="100%"
               height="600px"
             />

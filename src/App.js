@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
 import ResumePage from './pages/ResumePage/ResumePage';
+import './App.scss'
 
 function App() {
 	return (

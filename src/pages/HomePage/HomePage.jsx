@@ -73,6 +73,7 @@ export default function HomePage() {
                                 </div>
 
                                 <h1 className="display-3 fw-bolder mb-4"><span className="d-inline" id="typing-text">{displayedText}</span></h1>
+                                <p className='fw-bold '>A Full Stack Developer based in Corpus Christi, TX</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                     <Link to="/projects" className="btn btn-danger btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Projects</Link>
                                     <Link to="/resume" className="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder">Resume</Link>
@@ -391,19 +392,25 @@ export default function HomePage() {
                     <div className="row gx-6 justify-content-center">
                         <div className="col-xxl-10">
                             <div className="my-4">
-                                <h1 className="display-5 fw-bolder text-center"><span className="d-inline">A Little About Me</span></h1>
-                                <h4 className="text-muted about mb-3 text-center">
-                                    I'm a passionate front-end developer who's on a mission to craft captivating digital experiences.
-                                    I successfully completed the intensive Software Engineering Immersive program through General Assembly
-                                    in June 2023, and I'm ready to make waves in the tech industry. </h4>
-                                <h4 className="text-muted about mb-3 text-center">Before diving into tech, I wore many hats
-                                    in marketing, merchandising, and sales, where I refined my ability to connect with people and understand
-                                    their needs.
-                                    However, I yearned for a career that allowed me to channel my creativity and problem-solving skills into
-                                    creating visually stunning and user-friendly web interfaces.</h4>
-                                <h4 className="text-muted about text-center">I'm truly excited about the front-end realm of
-                                    tech and the endless possibilities it offers for enhancing user experiences and making the digital world
-                                    more engaging.</h4>
+                                <h1 className="display-5 fw-bolder"><span className="d-inline">A Little About Me</span></h1>
+                                <h5 className="text-muted about my-3">
+                                    I’m a passionate full stack developer with a strong interest on front-end development, driven to craft captivating digital experiences that delight users.
+                                    After successfully completing the Software Engineering Immersive program at General Assembly in June 2023, I quickly transitioned into the tech industry, taking on the role of a Full Stack Developer.
+                                </h5>
+                                <h5 className="text-muted about mb-3">
+                                    In my current role, I’ve been the sole developer responsible for creating and deploying innovative solutions, including QR code-based digital menus for local restaurants.
+                                    This hands-on experience has sharpened my ability to manage the entire software development lifecycle, from initial concept to deployment, all while ensuring alignment with business goals.
+
+                                
+                                </h5>
+                                <h5 className="text-muted about mb-3">
+                                    Before my career in tech, I gained valuable experience in marketing, merchandising, and sales, which honed my skills in understanding client needs and delivering results.
+                                    However, my true passion lies in technology, where I can channel my creativity and problem-solving abilities into developing visually stunning and user-friendly web interfaces.
+
+                                </h5>
+                                <h5 className="text-muted about">
+                                I’m excited to continue exploring the front-end realm of tech, where I can contribute to enhancing user experiences and making the digital world more engaging and accessible.
+                                </h5>
                             </div>
                         </div>
                     </div>
