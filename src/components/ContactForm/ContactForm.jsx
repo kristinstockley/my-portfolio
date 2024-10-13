@@ -37,10 +37,11 @@ export default function ContactForm() {
 
   return (
     <div className="contact-form">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form'>
         <div className="form-group text-center">
           {/* <label htmlFor="name">Name:</label> */}
           <input
+            className='form-control'
             type="text"
             name="name"
             id="name"
@@ -53,6 +54,7 @@ export default function ContactForm() {
         <div className="form-group text-center">
           {/* <label htmlFor="email">Email:</label> */}
           <input
+            className='form-control'
             type="email"
             name="email"
             id="email"
@@ -65,6 +67,7 @@ export default function ContactForm() {
         <div className="form-group text-center">
           {/* <label htmlFor="message">Message:</label> */}
           <textarea
+            className='form-control'
             name="message"
             id="message"
             placeholder='Message'

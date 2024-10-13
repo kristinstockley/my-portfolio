@@ -13,11 +13,9 @@ export default function MyVerticalTimeline() {
   return (
     <>
       <div className='vertical-timeline'>
-      <div className="d-flex align-items-center justify-content-between mb-4 mx-5 mt-5">
-        <h1 className="fw-bolder mb-0 mx-5">My Tech Timeline</h1>
-
+      <div className="d-flex align-items-center justify-content-between timeline-header">
+        <h1 className="fw-bolder mb-0 timeline-title">My Tech Timeline</h1>
         <ResumeModal />
-
       </div>
       <hr />
 
@@ -80,49 +78,7 @@ export default function MyVerticalTimeline() {
             Software Engineering Immersive
           </p>
         </VerticalTimelineElement>
-        {/* <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          contentStyle={{ background: '#fbfbfb' }}
-          date="June 5 - 12, 2023"
-          iconStyle={{ background: 'teal', color: '#fff' }}
-          icon={<BiLogoReact />}
 
-        >
-          <h3 className="vertical-timeline-element-title">Class Project</h3>
-          <h5 className="vertical-timeline-element-subtitle">CountMeIn</h5>
-          <p>
-            <a href="https://count-me-in.herokuapp.com/">count-me-in.herokuapp.com</a>
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          contentStyle={{ background: '#fbfbfb' }}
-          date="May 15 - 19, 2023"
-          iconStyle={{ background: 'purple', color: '#fff' }}
-          icon={<BiLogoDjango />}
-
-        >
-          <h3 className="vertical-timeline-element-title">Class Project</h3>
-          <h5 className="vertical-timeline-element-subtitle">SwiftSeats</h5>
-          <p>
-            <a href="https://swiftseats.herokuapp.com/">swiftseats.herokuapp.com</a>
-
-          </p>
-        </VerticalTimelineElement> */}
-        {/* <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          contentStyle={{ background: '#fbfbfb' }}
-          date="March 2023"
-          iconStyle={{ background: '#d22626', color: '#fff' }}
-          icon={<BiSolidCertification />}
-
-        >
-          <h3 className="vertical-timeline-element-title">Career Change</h3>
-          <h5 className="vertical-timeline-element-subtitle">General Assembly</h5>
-          <p>
-            Began Software Engineering Immersive Course
-          </p>
-        </VerticalTimelineElement> */}
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#fbfbfb' }}
@@ -161,45 +117,7 @@ export default function MyVerticalTimeline() {
             </li>
           </ul>
         </VerticalTimelineElement>
-        {/* <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: '#fbfbfb' }}
-          date="July 2014 - July 2015"
-          iconStyle={{ background: 'grey', color: '#fff' }}
-          icon={<BiSolidBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Marketing Specialist</h3>
-          <h5 className="vertical-timeline-element-subtitle">JCPenney Corporate</h5>
-          <p>
-            Frisco, TX
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: '#fbfbfb' }}
-          date="November 2013 - July 2014"
-          iconStyle={{ background: 'grey', color: '#fff' }}
-          icon={<BiSolidBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Assistant Brand Manager</h3>
-          <h5 className="vertical-timeline-element-subtitle">Sally Beauty Corporate</h5>
-          <p>
-            Denton, TX
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: '#fbfbfb' }}
-          date="March 2017 - June 2017"
-          iconStyle={{ background: 'grey', color: '#fff' }}
-          icon={<BiSolidBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Business Development Manager</h3>
-          <h5 className="vertical-timeline-element-subtitle">Sageplan Technology Services</h5>
-          <p>
-            Austin, TX
-          </p>
-        </VerticalTimelineElement> */}
+
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           contentStyle={{ background: '#fbfbfb' }}

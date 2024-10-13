@@ -2,11 +2,49 @@
 
 
 .vertical-timeline {
+
+    .timeline-header{
+        margin-top: 5rem;
+    }
+
     a:hover {
         color: $accent-color !important;
     }
 
     .vertical-timeline-element-date {
         color: black;
+    }
+}
+
+.vertical-timeline::before {
+    height: 0;
+}
+
+@media (max-width: 576px) {
+    .vertical-timeline {
+        .timeline-header{
+            margin-top: 2rem;
+        }
+        .view-resume{
+            font-size: 14px;
+            padding: .5rem 1rem;
+        }
+        .timeline-title{
+            font-size: 18px;
+        }
+        .vertical-timeline-element-title{
+            font-size: 16px;
+
+        }
+        .vertical-timeline-element-date {
+            color: black;
+        }
+        .vertical-timeline-element-subtitle{
+            font-size: 14px;
+
+        }
+        li{
+            font-size: 12px;
+        }
     }
 }

@@ -1,5 +1,12 @@
 @import '../../App.scss';
 
+.view-resume{
+  padding: 1rem;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+}
 
 .modal {
     display: flex;
@@ -35,3 +42,14 @@
     cursor: pointer;
   }
   
+
+  @media (max-width: 576px) {
+    .vertical-timeline {
+
+        .view-resume{
+            font-size: 14px;
+            padding: .5rem 1rem;
+        }
+      }
+    
+    }

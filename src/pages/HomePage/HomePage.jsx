@@ -387,161 +387,40 @@ export default function HomePage() {
 
             <hr className="featurette-divider">
             </hr>
-            <section className="py-5">
-                <div className="container about-container" id="about">
-                    <div className="row gx-6 justify-content-center">
-                        <div className="col-xxl-10">
-                            <div className="my-4">
-                                <h1 className="display-5 fw-bolder"><span className="d-inline">A Little About Me</span></h1>
-                                <h5 className="text-muted about my-3">
-                                    I’m a passionate full stack developer with a strong interest on front-end development, driven to craft captivating digital experiences that delight users.
-                                    After successfully completing the Software Engineering Immersive program at General Assembly in June 2023, I quickly transitioned into the tech industry, taking on the role of a Full Stack Developer.
-                                </h5>
-                                <h5 className="text-muted about mb-3">
-                                    In my current role, I’ve been the sole developer responsible for creating and deploying innovative solutions, including QR code-based digital menus for local restaurants.
-                                    This hands-on experience has sharpened my ability to manage the entire software development lifecycle, from initial concept to deployment, all while ensuring alignment with business goals.
 
-                                
-                                </h5>
-                                <h5 className="text-muted about mb-3">
-                                    Before my career in tech, I gained valuable experience in marketing, merchandising, and sales, which honed my skills in understanding client needs and delivering results.
-                                    However, my true passion lies in technology, where I can channel my creativity and problem-solving abilities into developing visually stunning and user-friendly web interfaces.
+                                        {/* <!-- About Section Starts --> */}
+                                        <section className="py-5">
+    <div className="container about-container" id="about">
+        <div className="row gx-6 justify-content-center">
+            <div className="col-xxl-10">
+                <div className="my-4">
+                <h1 className="display-5 fw-bolder">
+    <span className="d-inline">A Little About Me</span>
+</h1>
+<h5 className="text-muted about my-3">
+    I’m an ambitious and curious full stack developer, dedicated to helping local businesses establish and optimize their online presence while enhancing user experiences.
+</h5>
+<h5 className="text-muted about mb-3">
+    After completing the Software Engineering Immersive program at General Assembly in June 2023, I quickly transitioned into the tech industry, stepping into the role of Full Stack Developer.
+</h5>
+<h5 className="text-muted about mb-3">
+    As the sole developer at Harvest Growth Strategies, I juggle multiple high-priority projects simultaneously, designing and implementing tailored solutions to meet diverse business needs.
+</h5>
+<h5 className="text-muted about mb-3">
+    My prior experience in marketing, merchandising, and sales has sharpened my ability to understand client needs and deliver impactful, results-driven solutions.
+</h5>
+<h5 className="text-muted about">
+    I’m eager to further explore the front-end space, contributing to more intuitive user experiences and making digital interactions more engaging and accessible.
+</h5>
 
-                                </h5>
-                                <h5 className="text-muted about">
-                                I’m excited to continue exploring the front-end realm of tech, where I can contribute to enhancing user experiences and making the digital world more engaging and accessible.
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </div>
+</section>
+                                        {/* <!-- About Section Ends --> */}
 
-            {/* <hr className="featurette-divider">
-            </hr>
-            
-            <section id="skills" className="py-5">
-                <div className="container">
-                    <div className="row">
-                        <div className="col text-center">
-                            <h1 className="skills-title">I've worked with</h1>
-                        </div>
-                    </div>
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-html5 fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-css3-alt fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-js fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-node-js fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-bootstrap fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-react fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-python fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-git fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-github fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-1 mx-2">
-                            <div className="text-center">
-                                <i className="fab fa-markdown fa-5x d-flex-center skills-icon" color="purple"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <hr className="featurette-divider"></hr> */}
-
-            {/* <!-- Projects-->
-            <section className="content-section" id="projects">
-                <div className="container px-4">
-                    <div className="content-section-heading text-center">
-                        <h1 className="mt-5 mb-4">Current Project</h1>
-                    </div>
-                    <div className="row justify-content-center">
-
-                        <div className="col-lg-4">
-                            <a className="portfolio-item project-card" href="https://www.re-furred.com/" target="_blank" rel="noreferrer">
-                                <div className="rectangle-container refurred">
-                                    <img className="img-fluid refurred-img" src="assets/images/dogballoons.jpg" alt="refurred Project" />
-                                    <div className="project-info">
-                                        <h2 className="project-title refurred-title">re<span className="furr">furr</span>ed</h2>
-                                        <small className="project-title-two refurred-title-two">MERN | WIP with two fellow GA grads</small>
-                                        <p className="project-description refurred-description">Dog breed selector, finder, and directory</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <hr />
-
-                    <div className="content-section-heading text-center">
-                        <h1 className="mt-5 mb-4">Class Projects</h1>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="col-lg-4">
-                            <a className="portfolio-item project-card" href="https://count-me-in.herokuapp.com/" target="_blank" rel="noreferrer">
-                                <div className="rectangle-container">
-                                    <img className="img-fluid" src="assets/images/party.jpg" alt="CountMeIn Project" />
-                                    <div className="project-info">
-                                        <h3 className="project-title">CountMeIn</h3>
-                                        <small className="project-title-two">MERN</small>
-                                        <p className="project-description">Track upcoming occasions with personal countdowns</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div className="col-lg-4">
-                            <a className="portfolio-item project-card" href="https://swiftseats.herokuapp.com/" target="_blank" rel="noreferrer">
-                                <div className="rectangle-container">
-                                    <img className="img-fluid" src="assets/images/confetti-portfolio.jpg" alt="SwiftSeats Project" />
-                                    <div className="project-info">
-                                        <h3 className="project-title">SwiftSeats</h3>
-                                        <small className="project-title-two">Python | Django</small>
-                                        <p className="project-description">Concert tracker and photo storage for Swifties</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </section> */}
 
             <footer>
                 <button className="scroll-to-top rounded" id="scrollBtn" onClick={scrollToTop}>
