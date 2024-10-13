@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
@@ -9,6 +10,8 @@ const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'build')));
+
 
 app.post('/submit-form', (req, res) => {
   const formData = req.body;
@@ -44,6 +47,9 @@ app.post('/submit-form', (req, res) => {
 });
 
 
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 app.listen(port, () => {
