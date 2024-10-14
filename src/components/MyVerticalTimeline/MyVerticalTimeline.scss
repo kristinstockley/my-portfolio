@@ -3,7 +3,7 @@
 
 .vertical-timeline {
 
-    .timeline-header{
+    .timeline-header {
         margin-top: 5rem;
     }
 
@@ -22,28 +22,34 @@
 
 @media (max-width: 576px) {
     .vertical-timeline {
-        .timeline-header{
+        .timeline-header {
             margin-top: 2rem;
         }
-        .view-resume{
+
+        .view-resume {
             font-size: 14px;
             padding: .5rem 1rem;
         }
-        .timeline-title{
+
+        .timeline-title {
             font-size: 18px;
         }
-        .vertical-timeline-element-title{
+
+        .vertical-timeline-element-title {
             font-size: 16px;
 
         }
+
         .vertical-timeline-element-date {
             color: black;
         }
-        .vertical-timeline-element-subtitle{
+
+        .vertical-timeline-element-subtitle {
             font-size: 14px;
 
         }
-        li{
+
+        li {
             font-size: 12px;
         }
     }

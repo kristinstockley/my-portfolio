@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ResumeModal.scss';
 
-export default function ResumeModal () {
+export default function ResumeModal() {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -16,9 +16,9 @@ export default function ResumeModal () {
     <div>
 
       <button className="btn btn-outline-dark view-resume" onClick={openModal}>
-            <div className="d-inline-block bi bi-download"></div>
-            View Resume
-          </button>
+        <div className="d-inline-block bi bi-download"></div>
+        View Resume
+      </button>
       {showModal && (
         <div className="modal">
           <div className="modal-content">

@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react';
 import './HomePage.scss';
-import { Link } from 'react-router-dom';
-
-
-
-
+import ContactForm from '../../components/ContactForm/ContactForm';
 export default function HomePage() {
     const initialText = "Hi, I'm Kristin!";
     const typingSpeed = 100;
 
     const [displayedText, setDisplayedText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [activeFilter, setActiveFilter] = useState('all');
+
+    const portfolioItems = [
+        { title: 'Project 1', image: 'assets/images/refurred-mobile.png', category: 'Group', href: 'https://www.re-furred.com/', target: '_blank' },
+        { title: 'Project 2', image: 'assets/images/cmi-mobile.png', category: 'Class', href: 'https://count-me-in.herokuapp.com', target: '_blank' },
+        { title: 'Project 3', image: 'assets/images/swift-seats-mobile.png', category: 'Class', href: 'https://swiftseats.herokuapp.com/', target: '_blank' },
+    ];
+
+    const filteredPortfolioItems = portfolioItems.filter(item =>
+        activeFilter === 'all' ? true : item.category.toLowerCase() === activeFilter
+    );
 
     useEffect(() => {
         let typingInterval;
@@ -28,7 +35,6 @@ export default function HomePage() {
             clearInterval(typingInterval);
         };
     }, [currentIndex]);
-
 
     const scrollToTop = () => {
         if (document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0) {
@@ -60,376 +66,130 @@ export default function HomePage() {
 
     return (
         <>
-
-            <header className="header py-5">
-                <div className="container px-5 ">
-                    <div className="row gx-5 align-items-center">
-                        <div className="col-xxl-5">
-
-                            {/* <!-- Header text content--> */}
-                            <div className="text-center text-xxl-start">
-                                <div className="badge mb-4">
-                                    <div className="text-uppercase">Customize &middot; Optimize &middot; Modernize</div>
-                                </div>
-
-                                <h1 className="display-3 fw-bolder mb-4"><span className="d-inline" id="typing-text">{displayedText}</span></h1>
-                                <p className='fw-bold '>A Full Stack Developer based in Corpus Christi, TX</p>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                    <Link to="/projects" className="btn btn-danger btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Projects</Link>
-                                    <Link to="/resume" className="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder">Resume</Link>
-
-                                </div>
-
+            <div className='HomePage'>
+                <section className=''>
+                    <div className="container-fluid">
+                        <div className="banner rounded-4 header-section"
+                            style={{
+                                backgroundImage: 'url(assets/images/colors.jpg)',
+                                objectFit: 'cover',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundPosition: 'center',
+                                position: 'relative',
+                                zIndex: '0',
+                                height: '40rem',
+                                width: '90vw',
+                                margin: '0 auto'
+                            }}>
+                            <div className="profile-picture"
+                                style={{
+                                    position: 'absolute',
+                                    top: '-1.5%',
+                                    left: '74.25%',
+                                    width: '350px',
+                                    height: '650px',
+                                    backgroundSize: 'cover',
+                                    zIndex: '-1',
+                                }}>
+                                <img src="assets/images/profile-5.png" alt="Profile Picture"
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        borderRadius: '20px'
+                                    }} />
                             </div>
-                        </div>
-                        <div className="col-xxl-7">
-                            {/* <!-- Header profile picture--> */}
-                            <div className="d-flex justify-content-center mt-5 mt-xxl-0">
-                                <div className="profile bg-gradient-primary-to-secondary">
-                                    <img className="profile-img" src="assets/images/profile-2.png" alt="..." />
-                                    <div className="dots-1">
-                                        {/* <!-- SVG Dots--> */}
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlnsXlink="http://www.w3.org/1999/xlink"
-                                            viewBox="0 0 191.6 1215.4"
-                                        >
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path
-                                                    d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        {/* <!-- END of SVG dots--> */}
-                                    </div>
-                                    <div className="dots-2">
-                                        {/* <!-- SVG Dots--> */}
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            <div className="text-content text-white py-5 my-5">
+                                <h1 className="type-text">
+                                    <span className="d-inline" id="typing-text">{displayedText}</span>
+                                </h1>
+                            </div>
 
-                                            viewBox="0 0 191.6 1215.4"
-                                        >
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path
-                                                    d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        {/* <!-- END of SVG dots--> */}
-                                    </div>
-                                    <div className="dots-3">
-                                        {/* <!-- SVG Dots--> */}
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlnsXlink="http://www.w3.org/1999/xlink"
-
-                                            viewBox="0 0 191.6 1215.4"
-                                        >
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path
-                                                    d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        {/* <!-- END of SVG dots--> */}
-                                    </div>
-                                    <div className="dots-4">
-                                        {/* <!-- SVG Dots--> */}
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlnsXlink="http://www.w3.org/1999/xlink"
-                                            viewBox="0 0 191.6 1215.4"
-                                        >
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path
-                                                    d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z">
-                                                </path>
-                                                <path
-                                                    d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z">
-                                                </path>
-                                                <path
-                                                    d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        {/* <!-- END of SVG dots--> */}
-                                    </div>
+                            <div className="text-uppercase rounded-4 p-3 header-banner">
+                                <div className="d-flex align-items-center gap-4 justify-content-center">
+                                    <h2 className="display-2 text-light">Front</h2>
+                                    <p className="text-light-emphasis justify-content-center m-0 ls-4">End <br /> Enthusiast</p>
+                                </div>
+                                <div className="d-flex align-items-center gap-4">
+                                    <h2 className="display-2 text-light">1.5</h2>
+                                    <p className="text-light-emphasis justify-content-center m-0 ls-4">Years of <br /> experience</p>
+                                </div>
+                                <div className="d-flex align-items-center gap-4">
+                                    <h2 className="display-2 text-light">Full</h2>
+                                    <p className="text-light-emphasis justify-content-center m-0 ls-4">Stack <br /> Developer</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </header>
+                </section>
+                {/* <!-- About Section Starts --> */}
+                <section className="py-5">
+                    <div className="container about-container" id="about">
+                        <div className="row gx-6 justify-content-center">
+                            <div className="col-xxl-10">
+                                <div className="my-4">
+                                    <h1 className="display-5 fw-bolder">
+                                        <span className="d-inline">A Little About Me</span>
+                                    </h1>
+                                    <h5 className="text-muted about my-3">
+                                        I’m an ambitious and curious coder, dedicated to helping local businesses establish and optimize their online presence while enhancing user experiences.
+                                    </h5>
+                                    <h5 className="text-muted about mb-3">
+                                        After completing the Software Engineering Immersive program at General Assembly in June 2023, I quickly transitioned into the tech industry, stepping into the role of Full Stack Engineer.
+                                    </h5>
+                                    <h5 className="text-muted about mb-3">
+                                        As the sole developer at Harvest Growth Strategies, I juggle multiple high-priority projects simultaneously, designing and implementing tailored solutions to meet diverse business needs.
+                                    </h5>
+                                    <h5 className="text-muted about mb-3">
+                                        My prior experience in marketing, merchandising, and sales has sharpened my ability to understand client needs and deliver impactful, results-driven solutions.
+                                    </h5>
+                                    <h5 className="text-muted about">
+                                        I’m eager to further explore the front-end space, contributing to more intuitive user experiences and making digital interactions more engaging and accessible.
+                                    </h5>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="portfolio pb-5">
+                    <div className="container-fluid">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-6">
+                                <div className="section-header text-center">
+                                    <h4 className="fw-bold display-6">Projects</h4>
+                                </div>
+                            </div>
+                        </div>
 
-            <hr className="featurette-divider">
-            </hr>
+                        <div className="button-group d-flex flex-wrap gap-3 justify-content-center pb-5 pt-3">
+                            <button className={`btn btn-primary ${activeFilter === 'all' ? 'is-checked' : ''}`} onClick={() => setActiveFilter('all')}>All</button>
+                            <button className={`btn btn-primary ${activeFilter === 'group' ? 'is-checked' : ''}`} onClick={() => setActiveFilter('group')}>Group</button>
+                            <button className={`btn btn-primary ${activeFilter === 'class' ? 'is-checked' : ''}`} onClick={() => setActiveFilter('class')}>Class</button>
+                        </div>
 
-                                        {/* <!-- About Section Starts --> */}
-                                        <section className="py-5">
-    <div className="container about-container" id="about">
-        <div className="row gx-6 justify-content-center">
-            <div className="col-xxl-10">
-                <div className="my-4">
-                <h1 className="display-5 fw-bolder">
-    <span className="d-inline">A Little About Me</span>
-</h1>
-<h5 className="text-muted about my-3">
-    I’m an ambitious and curious full stack developer, dedicated to helping local businesses establish and optimize their online presence while enhancing user experiences.
-</h5>
-<h5 className="text-muted about mb-3">
-    After completing the Software Engineering Immersive program at General Assembly in June 2023, I quickly transitioned into the tech industry, stepping into the role of Full Stack Developer.
-</h5>
-<h5 className="text-muted about mb-3">
-    As the sole developer at Harvest Growth Strategies, I juggle multiple high-priority projects simultaneously, designing and implementing tailored solutions to meet diverse business needs.
-</h5>
-<h5 className="text-muted about mb-3">
-    My prior experience in marketing, merchandising, and sales has sharpened my ability to understand client needs and deliver impactful, results-driven solutions.
-</h5>
-<h5 className="text-muted about">
-    I’m eager to further explore the front-end space, contributing to more intuitive user experiences and making digital interactions more engaging and accessible.
-</h5>
-
-                </div>
+                        <div className="grid p-0 clearfix row row-cols-2 row-cols-lg-3 row-cols-xl-4 portfolio">
+                            {filteredPortfolioItems.map((item, index) => (
+                                <div className={`col mb-4 portfolio-item ${item.category.toLowerCase()}`} key={index}>
+                                    <a href={item.href} target={item.target} rel="noopener noreferrer" title={item.title}>
+                                        <img src={item.image} className="img-fluid rounded-4 port-img" alt={item.title} />
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+                <ContactForm />
+                <footer>
+                    <button className="scroll-to-top rounded " id="scrollBtn" onClick={scrollToTop}>
+                        <i className="fas fa-angle-up"></i>
+                    </button>
+                </footer>
             </div>
-        </div>
-    </div>
-</section>
-                                        {/* <!-- About Section Ends --> */}
-
-
-
-            <footer>
-                <button className="scroll-to-top rounded" id="scrollBtn" onClick={scrollToTop}>
-                    <i className="fas fa-angle-up"></i>
-                </button>
-            </footer>
-
-
-
         </>
-    )
+    );
 }
+
+
+
+

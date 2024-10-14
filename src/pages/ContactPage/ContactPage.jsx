@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 
 export default function ContactPage() {
-  const initialText = "Get in Touch!";
+  const initialText = "Let's get in touch!";
   const typingSpeed = 100;
 
   const [displayedText, setDisplayedText] = useState('');
@@ -28,9 +28,9 @@ export default function ContactPage() {
 
   return (
     <>
-      <h1 className="text-center mt-5">{displayedText}</h1>
+      <h1 className="text-center pt-5 display-5">Say Hello!</h1>
       <ContactForm />
-      <footer className="row" id="contact">
+      {/* <footer className="row" id="contact">
         <div className="col text-center">
           <a className="btn text-gradient" href="https://www.linkedin.com/in/kristin-stockley/" target="_blank" rel="noreferrer">
             <i className="bi bi-linkedin text-gradient"></i>
@@ -42,7 +42,7 @@ export default function ContactPage() {
             <i className="bi bi-github text-gradient"></i>
           </a>
         </div>
-      </footer>
+      </footer> */}
     </>
   )
 }
