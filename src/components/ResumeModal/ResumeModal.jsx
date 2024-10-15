@@ -15,7 +15,7 @@ export default function ResumeModal() {
   return (
     <div>
 
-      <button className="btn btn-outline-dark view-resume" onClick={openModal}>
+      <button className="btn btn-outline-dark view-resume border-0" onClick={openModal}>
         <div className="d-inline-block bi bi-download"></div>
         View Resume
       </button>

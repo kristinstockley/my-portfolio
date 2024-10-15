@@ -1,61 +1,117 @@
-import Card from 'react-bootstrap/Card';
+import React, { useState } from 'react';
 import './ProjectsPage.scss';
-import { BiLogoDjango, BiLogoReact, BiLogoPython, BiLogoMongodb, BiLogoNodejs } from 'react-icons/bi';
-import { SiExpress } from 'react-icons/si';
-
 
 export default function ProjectsPage() {
+    const [activeFilter, setActiveFilter] = useState('*');
+
+    const handleFilterChange = (filter) => {
+        setActiveFilter(filter);
+    };
+
+    // Project data
+    const projects = [
+        {
+            id: 1,
+            category: 'client',
+            title: 'The Point of Corpus Christi',
+            imgSrc: 'assets/images/thepoint-menu.png',
+            role: 'Full Stack Developer - MERN Menu & Dashboard',
+            link: 'https://thepointofcorpuschristi.com/'
+        },
+        {
+            id: 2,
+            category: 'client',
+            title: 'La Playa By The Bay',
+            imgSrc: 'assets/images/laplaya-dashboard.png',
+            role: 'Full Stack Developer - MERN Menu & Dashboard',
+            description: 'Online Ordering in Progress',
+
+            link: 'https://laplayabythebay.com/'
+        },
+        {
+            id: 3,
+            category: 'projects',
+            title: 'refurred',
+            imgSrc: 'assets/images/breed-selector.png',
+            role: 'Group Project - Front End Developer',
+            link: 'https://www.re-furred.com/'
+        },
+        {
+            id: 4,
+            category: 'general',
+            title: 'CountMeIn',
+            imgSrc: 'assets/images/count-me-in.png',
+            role: 'Class Project - MERN Stack',
+            link: 'https://count-me-in.herokuapp.com'
+        },
+        {
+            id: 5,
+            category: 'general',
+            title: 'SwiftSeats',
+            imgSrc: 'assets/images/swift-seats.png',
+            role: 'Class Project - Django',
+            link: 'https://swiftseats.herokuapp.com/'
+        }
+    ];
+
+    // Filtered projects based on the selected category
+    const filteredProjects = projects.filter(project => {
+        if (activeFilter === '*') return true;
+        return project.category === activeFilter;
+    });
 
     return (
         <>
-            <h1 className="text-center mt-5">Group Project</h1>
-
-            <Card className="bg-dark text-white refurred-card mb-5">
-                <a className="portfolio-item project-card" href="https://www.re-furred.com/" target="_blank" rel="noreferrer">
-                    <div className="card-overlay">
-                        <Card.Img src="assets/images/refurred.png" alt="refurred Project" className='refurred-img' />
-                        <Card.ImgOverlay className='text-white overlay' >
-                        <div className="text-center">
-                                <h2 className='mb-0'>View Project</h2>
-                                <p className='project-icons'><BiLogoMongodb /><SiExpress /> <BiLogoReact /> <BiLogoNodejs /></p>
+            <section className="section_gap portfolio_area">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-6 text-center">
+                            <div className="main-title">
+                                <h1>Latest Works</h1>
                             </div>
-                        </Card.ImgOverlay>
+                        </div>
                     </div>
-                </a>
-            </Card>
 
-            <hr />
-
-            <h1 className="text-center mt-5">Class Projects</h1>
-            <Card className="bg-dark text-white cmi-card mb-2">
-                <a className="portfolio-item project-card" href="https://count-me-in.herokuapp.com/" target="_blank" rel="noreferrer">
-                    <div className="card-overlay">
-                        <Card.Img src="assets/images/count-me-in.png" alt="CMI Project" className='cmi-img' />
-                        <Card.ImgOverlay className='text-white overlay' >
-                        <div className="text-center">
-
-                        <h2 className='mb-0'>View Project</h2>
-                                <p className='project-icons'><BiLogoMongodb /><SiExpress /> <BiLogoReact /> <BiLogoNodejs /></p>
-                                </div>
-                        </Card.ImgOverlay>
-                    </div>
-                </a>
-            </Card>
-
-            <Card className="bg-dark text-white swiftseats-card mb-5">
-                <a className="portfolio-item project-card" href="https://swiftseats.herokuapp.com/" target="_blank" rel="noreferrer">
-                    <div className="card-overlay">
-                        <Card.Img src="assets/images/swift-seats.png" alt="SwiftSeats Project" className='swiftseats-img' />
-                        <Card.ImgOverlay className='text-white overlay' >
-                        <div className="text-center mb-5">
-                        <h2 className='mb-0'>View Project</h2>
-                                <Card.Title className='project-icons mb-5'><BiLogoPython /> <BiLogoDjango /></Card.Title>
+                    <div className="row justify-content-center">
+                        <div className="col-lg-10">
+                            <div className="projects_filter">
+                                <ul className="filter list">
+                                    <li className={activeFilter === '*' ? 'active' : ''} onClick={() => handleFilterChange('*')}>
+                                        All
+                                    </li>
+                                    <li className={activeFilter === 'client' ? 'active' : ''} onClick={() => handleFilterChange('client')}>
+                                        Clients
+                                    </li>
+                                    <li className={activeFilter === 'projects' ? 'active' : ''} onClick={() => handleFilterChange('projects')}>
+                                        Projects
+                                    </li>
+                                    <li className={activeFilter === 'general' ? 'active' : ''} onClick={() => handleFilterChange('general')}>
+                                        General Assembly
+                                    </li>
+                                </ul>
                             </div>
-                        </Card.ImgOverlay>
+                        </div>
                     </div>
-                </a>
 
-            </Card>
+                    <div className="projects_inner row grid">
+                        {filteredProjects.map(project => (
+                            <div key={project.id} className="col-lg-4 col-md-6 grid-item">
+                                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                    <div className="projects_item">
+                                        <img className="img-fluid w-100" src={project.imgSrc} alt={project.title} />
+                                        <div className="projects_text">
+                                            <h4>{project.title}</h4>
+                                            <p>{project.role}</p>
+                                            <small>{project.description}</small>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </>
-    )
+    );
 }

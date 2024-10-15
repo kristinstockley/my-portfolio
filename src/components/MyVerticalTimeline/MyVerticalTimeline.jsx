@@ -22,7 +22,7 @@ export default function MyVerticalTimeline() {
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work text-black"
-            contentStyle={{ background: '#255C63', color: 'white' }}
+            contentStyle={{ background: '', color: 'black' }}
 
             date="December 2023 - Present"
             iconStyle={{ background: '#C9CE00', color: '#fff' }}
@@ -33,21 +33,21 @@ export default function MyVerticalTimeline() {
           >
             <h3 className="vertical-timeline-element-title">Full Stack Developer</h3>
             <h5 className="vertical-timeline-element-subtitle">Harvest Growth Strategies</h5>
-            <ul className='text-white my-3'>
+            <ul className='text-black my-3'>
               <li className='mb-2'>
                 Sole developer responsible for all technical decisions and implementations across multiple projects, ensuring alignment with business goals and requirements under tight deadlines            </li>
               <li className='mb-2'>
-                Created and deployed QR code-based digital menus for local restaurants, including <Link to='https://thepointofcorpuschristi.com/' target='_blank' className='text-white link-underline-light'>The Point of Corpus Christi</Link> and <Link to='https://laplayabythebay.com/' target='_blank' className='text-white link-underline-light'>La Playa By The Bay</Link>, using the MERN stack, significantly enhancing customer experience and streamlining operations            </li>
+                Created and deployed QR code-based digital menus for local restaurants, including <Link to='https://thepointofcorpuschristi.com/' target='_blank' className='text-black link-underline-light'>The Point of Corpus Christi</Link> and <Link to='https://laplayabythebay.com/' target='_blank' className='text-black link-underline-light'>La Playa By The Bay</Link>, using the MERN stack, significantly enhancing customer experience and streamlining operations            </li>
               <li>
                 Designed and implemented an intuitive admin dashboard for menu management, enabling seamless CRUD operations on menu items, resulting in efficient real-time updates            </li>
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: '#fbfbfb' }}
+            contentStyle={{ background: '' }}
 
             date="September 2023 - Present"
-            iconStyle={{ background: '#F24D2C', color: '#fff' }}
+            iconStyle={{ background: '#255C63', color: '#fff' }}
             icon={<FaBriefcase />}
           >
             <h3 className="qa-vertical-timeline-element-title text-black">Quality Assurance Analyst Intern</h3>
@@ -83,7 +83,7 @@ export default function MyVerticalTimeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: '#fbfbfb' }}
             date="June 2019 - February 2023"
-            iconStyle={{ background: '#F24D2C', color: '#fff' }}
+            iconStyle={{ background: '#255C63', color: '#fff' }}
             icon={<BiSolidBriefcase />}
           >
             <h3 className="vertical-timeline-element-title">Promotional Products Manager</h3>
@@ -122,7 +122,7 @@ export default function MyVerticalTimeline() {
             className="vertical-timeline-element--education"
             contentStyle={{ background: '#fbfbfb' }}
             date="August 2009 - December 2012"
-            iconStyle={{ background: '#F24D2C', color: '#fff' }}
+            iconStyle={{ background: '#255C63', color: '#fff' }}
             icon={<FaGraduationCap />}
           >
             <h3 className="vertical-timeline-element-title">Bachelor's Degree</h3>

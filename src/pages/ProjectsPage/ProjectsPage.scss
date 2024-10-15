@@ -1,89 +1,241 @@
 @import '../../App.scss';
 
 
-.card-overlay {
+
+
+.projects_filter {
+  background: rgb(239, 239, 239);
+  color: $primary-color !important;
+
+  .filter {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 13px 0;
+
+    @media (max-width: 575px) {
+      padding: 13px;
+    }
+
+    &:after {
+      position: absolute;
+      left: 2%;
+      bottom: -10px;
+      height: 100%;
+      width: 96%;
+      content: "";
+      background: $accent-color;
+      z-index: -1;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 60px;
+      font-size: 14px;
+      color: #000;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      &.active,
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.projects_inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+
+}
+
+.projects_item {
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
+  // height: 15rem;
+  img {
+    width: 100%;
+    height: 14rem;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+  }
 
-  &::before {
-    content: '';
+  &:before {
+    content: "";
+    background: black;
+
     position: absolute;
-    top: 0;
-    left: 0;
+    left: 0px;
+    top: 0px;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: all 300ms ease;
+
   }
 
+  .projects_text {
+    position: absolute;
+    width: 100%;
+    left: 50% transform(translateX(-50%));
 
-}
+    bottom: 0px;
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    // @include transition();
 
-.project-card:hover .overlay {
-  opacity: 1;
-}
+    h4 {
+      font-size: 20px;
+      color: $accent-color;
+      text-shadow: 1px 1px 1px black;
+      margin-bottom: 5px;
+      // @include transition;
+      // text-transform: uppercase;
+      cursor: pointer;
 
-.overlay p {
-  font-size: 2rem;
-  color: white;
-}
+    }
+
+    p {
+      margin-bottom: 0px;
+      font-size: 15px;
+      color: white;
+      font-weight: 400;
+
+    }
+
+    small {
+
+      color: white !important;
 
 
-.refurred-card,
-.cmi-card,
-.swiftseats-card {
-  max-width: 60rem;
-  height: 22rem;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+    }
+  }
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    &:before {
+      opacity: 0.7;
+    }
 
+    .projects_text {
+      opacity: 1;
+      visibility: visible;
+      bottom: 30px;
+    }
   }
-
-  .project-icons {
-    font-size: 2rem;
-  }
-
 }
 
+/* End Projects Area css
+============================================================================================ */
 
-@media (max-width: 576px) {
+/* Portfolio Details Area css
+============================================================================================ */
 
-  .refurred-card,
-  .cmi-card,
-  .swiftseats-card {
-    height: 8rem;
+.portfolio_details_inner {
+  .row {
+    margin-bottom: 65px;
+
+    @media (max-width: 480px) {
+      margin-bottom: 30px;
+    }
   }
 
+  p {
+    margin-bottom: 30px;
+    font-size: 14px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .portfolio_right_text {
+    margin-top: 50px;
+
+    @media (max-width: 991px) {
+      margin-top: 0px;
+    }
+
+    @media (max-width: 576px) {
+      margin-top: 50px;
+    }
+
+    h4 {
+      color: $primary-color;
+      font-size: 21px;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .list {
+      li {
+        margin-bottom: 7px;
+
+        span {
+          font-size: 14px;
+          color: #000;
+          font-weight: 400;
+          width: 97px;
+          display: inline-block;
+        }
+
+        font-weight: normal;
+        font-size: 14px;
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
+
+        i {
+          color: #f1cd09;
+        }
+      }
+    }
+  }
 }
 
-@media (max-width: 768px) {
+.social_details {
+  margin-top: 50px;
 
-  .refurred-card,
-  .cmi-card,
-  .swiftseats-card {
-    height: 16.5rem;
+  @media (max-width: 480px) {
+    margin-top: 20px;
   }
 
+  li {
+    display: inline-block;
+    margin-right: 14px;
+
+    a {
+      font-size: 14px;
+
+      i {
+        color: #000 !important;
+
+        &:hover {
+          color: $primary-color !important;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
 }

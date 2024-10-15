@@ -2,9 +2,23 @@
 
 
 .HomePage {
+
   .about {
     font-weight: normal;
     line-height: 1.75rem;
+  }
+
+  .about-span {
+    font-size: 20px;
+    font-weight: normal;
+    padding-left: .75rem;
+  }
+
+  .about-title {
+    font-size: 48px;
+    font-weight: bolder;
+    line-height: 1.25rem;
+
   }
 
   .scroll-to-top {
@@ -41,12 +55,10 @@
 .header-banner {
   // margin: 0 auto !important;
   // margin-top: 8rem !important;
-  // margin-top: 8rem !important;
   display: flex;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.767);
   padding: 1rem 3rem !important;
-
 
 }
 
@@ -55,6 +67,12 @@
   // align-items: center;
   justify-content: space-between;
   flex-direction: column;
+
+  // width: 80vw !important;
+  p {
+
+    text-shadow: 1px 2px 2px black !important;
+  }
 }
 
 /* font size */
@@ -154,24 +172,46 @@ p.a {
 @media (max-width: 768px) {
 
   .HomePage {
-    .profile-picture {
-      height: 24rem !important;
-      width: 14rem !important;
-      top: 25% !important;
-      left: 15% !important;
+    .about-span {
+      font-weight: normal;
+      padding-left: .75rem;
+      line-height: 0rem;
 
+      font-size: 16px;
+
+    }
+
+    .about-title {
+      font-size: 28px;
+      font-weight: bolder;
+      line-height: 1.45rem;
+
+
+
+
+    }
+
+    .profile-picture {
+      height: auto !important;
+      width: 12rem !important;
+      top: 30% !important;
+      left: 20% !important;
+      // background-image: url('../../../public/assets/images/profile-2.png') !important;  
+      // img{
+      //   display: none;
+      // }
     }
 
     .about {
       font-weight: normal;
-      line-height: 1.15rem;
-      font-size: 14px;
+      line-height: 1.25rem;
+      font-size: 16px;
 
     }
 
     .type-text {
       font-size: 3rem !important;
-      margin-top: -2rem;
+      margin-top: 0rem;
       padding: 0rem;
       text-align: center;
       text-shadow: 2px 2px 2px black;
@@ -199,11 +239,11 @@ p.a {
 
   .header-banner {
     // margin: 0 auto !important;
-    margin-top: 10rem !important;
+    margin-top: 6rem !important;
     // margin-bottom: 5rem;
     // margin-top: 8rem !important;
     display: flex;
-    justify-content: space-around !important;
+    justify-content: space-between !important;
     background-color: rgba(0, 0, 0, 0.767);
     padding: 1rem 3.25rem !important;
     flex-direction: column;
@@ -246,19 +286,9 @@ p.a {
     height: 32rem !important;
     justify-content: center;
 
-    background-position: 45% !important;
+    background-position: 40% !important;
+
+
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
