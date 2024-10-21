@@ -105,25 +105,26 @@ export default function HomePage() {
                                     }} />
                             </div>
                             
-                            <div className="text-content text-white py-5 my-5">
-                            <p className='fs-2 ms-5 text-white t'>Software Engineer</p>
-
-                                <h1 className="type-text">
+                            <div className="">
+                                <div>
+                            <p className='fs-2 text-white banner-title'>Software Engineer</p>
+                            </div>
+                                <h1 className="type-text text-white">
                                     <span className="d-inline" id="typing-text">{displayedText}</span>
                                 </h1>
                             </div>
 
-                            <div className="text-uppercase rounded-4 p-3 header-banner">
-                            <div className="d-flex align-items-center gap-4">
+                            <div className="text-uppercase rounded-4 header-banner">
+                            <div className="d-flex align-items-center gap-2">
                                     <h2 className="display-3 text-light">Full</h2>
                                     <p className="text-white justify-content-center m-0 ls-4">Stack <br /> Developer</p>
                                 </div>
                              
-                                <div className="d-flex align-items-center gap-4">
-                                    <h2 className="display-2 text-light">8</h2>
-                                    <p className="text-white justify-content-center m-0 ls-4">Programming <br /> Technologies</p>
+                                <div className="d-flex align-items-center gap-2">
+                                    <h2 className="display-3 text-light">Motivated</h2>
+                                    <p className="text-white justify-content-center m-0 ls-4">MERN<br /> Architect</p>
                                 </div>
-                                <div className="d-flex align-items-center gap-4 justify-content-center">
+                                <div className="d-flex align-items-center gap-2 justify-content-center">
                                     <h2 className="display-3 text-light">Front</h2>
                                     <p className="text-white justify-content-center m-0 ls-4">End <br /> Enthusiast</p>
                                 </div>
@@ -132,12 +133,12 @@ export default function HomePage() {
                     </div>
                 </section>
                 {/* <!-- About Section Starts --> */}
-                <section className="py-5">
+                <section className="about-section">
                     <div className="container about-container" id="about">
-                        <div className="row gx-6 justify-content-center">
+                        <div className="row  justify-content-center">
                             <div className="col-xxl-10">
-                                <div className="my-4">
-                                       <p className='about-title '> I’m an ambitious and curious coder,
+                                <div className="">
+                                       <p className='about-title'> I’m an ambitious and curious coder,
                                         <span className="text-muted about-span">
                                           focused on helping small businesses establish and optimize their online presence while enhancing both user and admin experiences.
                                             </span>
@@ -151,7 +152,7 @@ export default function HomePage() {
                                     </h5>
                     
                                  
-                                    <h5 className="text-muted about">
+                                    <h5 className="text-muted about ">
                                         I’m eager to dive deeper into the front-end space, contributing to more intuitive user journies and making digital interactions more engaging and accessible.
                                     </h5>
 

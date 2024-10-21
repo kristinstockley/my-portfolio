@@ -66,7 +66,7 @@ export default function ProjectsPage() {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-6 text-center">
-                            <div className="main-title">
+                            <div className="project-title">
                                 <h1>Latest Works</h1>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ export default function ProjectsPage() {
                     <div className="row justify-content-center">
                         <div className="col-lg-10">
                             <div className="projects_filter">
-                                <ul className="filter list">
+                                <ul className="filter list filter-list">
                                     <li className={activeFilter === '*' ? 'active' : ''} onClick={() => handleFilterChange('*')}>
                                         All
                                     </li>

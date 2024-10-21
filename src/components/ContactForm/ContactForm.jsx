@@ -108,7 +108,7 @@ export default function ContactForm() {
                   type="submit"
                   className="btn bg-teal text-white fw-bold btn-lg text-uppercase rounded-4"
                 >
-                  Submit
+                  Send
                 </button>
               </div>
             </div>
