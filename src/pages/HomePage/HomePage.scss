@@ -320,3 +320,143 @@ p.a {
   }
 
 }
+
+@media (max-width: 1200px) { 
+
+  .HomePage {
+    .about-section{
+      padding: 3rem 0 1rem 0;
+    }
+    .banner-title{
+      color: white;
+      margin: 4rem 0 0 1.25rem;
+      font-size: 1.5 !important;
+      text-align: start;
+  
+
+
+  
+    }
+    .about-span {
+      font-weight: normal;
+      padding-left: .75rem;
+      line-height: 0rem;
+
+      font-size: 16px;
+
+    }
+
+    .about-title {
+      font-size: 28px;
+      font-weight: bolder;
+      line-height: 1.45rem;
+      
+
+
+
+
+    }
+
+    .profile-picture {
+      height: auto !important;
+      width: 12.5rem !important;
+      top: 8% !important;
+      left: 60% !important;
+      // background-image: url('../../../public/assets/images/profile-2.png') !important;  
+      // img{
+      //   display: none;
+      // }
+    }
+
+    .about {
+      font-weight: normal;
+      line-height: 1.25rem;
+      font-size: 16px;
+
+    }
+
+    .type-text {
+      font-size: 4rem !important;
+      margin-top: 0rem !important;
+      text-align: start;
+      text-shadow: 2px 2px 2px black;
+      position: absolute;
+      margin: 0 auto;
+      padding-left: 1.15rem;
+
+      // margin-bottom: 2rem;
+    }
+
+  }
+
+
+
+
+  .port-img {
+    height: 15rem;
+    width: 8rem !important;
+    object-position: top;
+    border-radius: 10px !important;
+
+  }
+
+  .header-banner {
+    // margin: 0 auto !important;
+    margin-top: 14rem !important;
+    // margin-bottom: 5rem;
+    // margin-top: 8rem !important;
+    display: flex;
+    justify-content: space-between !important;
+    background-color: rgba(0, 0, 0, 0.767);
+    padding: 1rem!important;
+    width: 100%;
+    gap: .5rem;
+
+    div {
+      justify-content: center !important;
+      align-items: center !important;
+      gap: .5rem !important;
+      // justify-content: space-around !important;
+
+h2{
+  font-size: 2.25rem;
+}
+p{
+  font-size: .75rem !important;
+}
+
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 0rem !important;
+
+
+    }
+
+    p {
+      font-size: 12px !important;
+      letter-spacing: normal !important;
+
+      br {
+        display: none !important;
+      }
+    }
+
+  }
+
+  .header-section {
+    display: flex;
+    // align-items: center;
+    // justify-content: space-around !important;
+    flex-direction: column;
+    width: 100% !important;
+    height: 25rem !important;
+    justify-content: center;
+   
+
+    background-position: 40% !important;
+
+
+  }
+ }
