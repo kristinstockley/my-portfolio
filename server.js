@@ -12,45 +12,51 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
+app.use(cors({
+  origin: 'https://www.kristinstockley.com', // Allow frontend requests
+  methods: ['GET', 'POST'],
+}));
+
+// Configure the transporter once at the beginning
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
+
+
+
 
 app.post('/submit-form', (req, res) => {
-  const formData = req.body;
-
-  const contactEmail = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASSWORD,
-    },
-  });
+  const { name, email, message } = req.body;
 
   const mailOptions = {
-    from: formData.email,
+    from: email,
     to: process.env.EMAIL_USER,
     subject: 'Contact Form Submission',
     text: `
-      Name: ${formData.name}
-      Email: ${formData.email}
-      Message: ${formData.message}
+      Name: ${name}
+      Email: ${email}
+      Message: ${message}
     `,
   };
 
-  contactEmail.sendMail(mailOptions, (error, info) => {
+  transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
-      res.status(500).json({ message: 'Error sending email' });
+      console.error('Email send error:', error);
+      res.status(500).json({ message: 'Error sending email', error });
     } else {
-      console.log('Email sent: ' + info.response);
+      console.log('Email sent:', info.response);
       res.json({ message: 'Form submitted successfully' });
     }
   });
 });
 
-
-app.get('/*', function(req, res) {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

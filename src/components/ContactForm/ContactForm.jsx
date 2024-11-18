@@ -15,6 +15,7 @@ export default function ContactForm() {
 
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
   useEffect(() => {
     let typingInterval;
@@ -43,7 +44,7 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3001/submit-form', formData);
+      await axios.post(`${API_URL}/submit-form`, formData);
       setShowPopup(true); // Show the popup
       setTimeout(() => setShowPopup(false), 3000); // Hide after 3 seconds
       setFormData({
