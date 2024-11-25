@@ -33,7 +33,7 @@ app.post('/submit-form', (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: process.env.EMAIL_USER,
+    to: process.env.EMAIL_RECEIVER,
     subject: 'Contact Form Submission',
     text: `
       Name: ${name}
