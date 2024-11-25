@@ -8,14 +8,16 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors());
+// Configure CORS with allowed origins and methods
+app.use(
+  cors({
+    origin: ['http://localhost:3000', 'https://www.kristinstockley.com'], // Allow both local dev and production
+    methods: ['GET', 'POST'], // Allow only GET and POST methods
+  })
+);
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
-
-app.use(cors({
-  origin: 'https://www.kristinstockley.com', // Allow frontend requests
-  methods: ['GET', 'POST'],
-}));
 
 // Configure the transporter once at the beginning
 const transporter = nodemailer.createTransport({
@@ -25,9 +27,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASSWORD,
   },
 });
-
-
-
 
 app.post('/submit-form', (req, res) => {
   const { name, email, message } = req.body;
