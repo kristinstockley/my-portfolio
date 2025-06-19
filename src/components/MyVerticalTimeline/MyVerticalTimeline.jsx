@@ -35,11 +35,17 @@ export default function MyVerticalTimeline() {
             <h5 className="vertical-timeline-element-subtitle">Harvest Growth Strategies</h5>
             <ul className='text-black my-3'>
               <li className='mb-2'>
-                Sole developer responsible for all technical decisions and implementations across multiple projects, ensuring alignment with business goals and requirements under tight deadlines            </li>
+                Sole developer responsible for full-stack architecture, deployment, and feature delivery across two web platforms aligned with business goals
+              </li>
               <li className='mb-2'>
-                Created and deployed QR code-based digital menus for local restaurants, including <Link to='https://thepointofcorpuschristi.com/' target='_blank' className='text-black link-underline-light'>The Point of Corpus Christi</Link> and <Link to='https://laplayabythebay.com/' target='_blank' className='text-black link-underline-light'>La Playa By The Bay</Link>, using the MERN stack, significantly enhancing customer experience and streamlining operations            </li>
+                Designed and launched a custom eCommerce site for <Link to='https://ezekieldiamondco.com/' target='_blank' className='text-black link-underline-light'>Ezekiel Diamond Co</Link> using the MERN stack, integrating Stuller’s vendor APIs for lab-grown diamonds, gemstones, and mountings with real-time inventory, dynamic filtering, and interactive product customization
+              </li>
+              <li className='mb-2'>
+                Built and deployed a QR code-based digital menu platform for <Link to='https://thepointofcorpuschristi.com/' target='_blank' className='text-black link-underline-light'>The Point of Corpus Christi</Link> with an intuitive admin dashboard for real-time menu management
+              </li>
               <li>
-                Designed and implemented an intuitive admin dashboard for menu management, enabling seamless CRUD operations on menu items, resulting in efficient real-time updates            </li>
+                Deployed both applications to a Linux VPS, configuring NGINX reverse proxies, SSL, and environment-based builds with PM2, ensuring secure, scalable, and high-uptime operations
+              </li>
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement

@@ -80,20 +80,11 @@ export default function HomePage() {
                                 zIndex: '0',
                                 height: '40rem',
                                 width: '90vw',
-                                margin: '0 auto'
+                                margin: '0 auto',
                             }}>
                             <div className="profile-picture"
-                                style={{
-                                    position: 'absolute',
-                                    top: '10%',
-                                    left: '64.25%',
-                                    width: '315px',
-                                    height: '575px',
-                                    backgroundSize: 'cover',
-                                    zIndex: '-1',
-                                    backgroundImage: 'url(assets/images/.jpg)',
-
-                                }}>
+                          
+                            >
                                 <img src="assets/images/profile-5.png" alt="Headshot"
                                     style={{
                                         width: '100%',
@@ -102,17 +93,18 @@ export default function HomePage() {
                                         borderRadius: '20px',
                                         backgroundImage: 'url(assets/images/.jpg)',
 
-                                    }} />
+                                    }}
+                                />
                             </div>
                             
-                            <div className="">
-                                <div>
-                            <p className='fs-2 text-white banner-title'>Software Engineer</p>
-                            </div>
-                                <h1 className="type-text text-white">
-                                    <span className="d-inline" id="typing-text">{displayedText}</span>
+                            
+                                <div className='header-hello'>
+                            <p className='text-white banner-title'>Software Engineer</p>
+                                <h1 className="type-text text-white d-inline" id="typing-text">
+                               {displayedText}
                                 </h1>
-                            </div>
+                                </div>
+
 
                             <div className="text-uppercase rounded-4 header-banner">
                             <div className="d-flex align-items-center gap-2">
@@ -144,8 +136,7 @@ export default function HomePage() {
                                             </span>
                                     </p>
                                     <h5 className="text-muted about mb-3">
-                                        I'm currently a Full Stack Developer at Harvest Growth Strategies, a marketing and consulting firm representing local businesses in Corpus Christi, Texas.
-                                        As the sole engineer, I single-handedly manage the entire software development lifecycle—from concept and design to deployment and maintenance.
+                                        I recently served as the sole Full Stack Developer at Harvest Growth Strategies, a marketing and consulting firm representing local businesses in Corpus Christi, Texas. I led the full software lifecycle for two major client-facing platforms—Ezekiel Diamond Co and The Point of Corpus Christi—from architecture and development to deployment and server management.
                                     </h5>
                                     <h5 className="text-muted about mb-3 mt-4">
                                         Before completing the Software Engineering Immersive program through General Assembly in 2023, I gained valuable experience in marketing, merchandising, and sales. This background has given me a unique perspective on how to align technical solutions with business goals and user needs.

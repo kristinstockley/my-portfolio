@@ -10,24 +10,32 @@ export default function ProjectsPage() {
 
     // Project data
     const projects = [
-        {
+            {
             id: 1,
+            category: 'client',
+            title: 'Ezekiel Diamond Co',
+            imgSrc: 'assets/images/ezekieldiamondco.png',
+            role: 'Full Stack Developer - eCommerce Site',
+            link: 'https://ezekieldiamondco.com/'
+        },
+        {
+            id: 2,
             category: 'client',
             title: 'The Point of Corpus Christi',
             imgSrc: 'assets/images/thepoint-menu.png',
             role: 'Full Stack Developer - MERN Menu & Dashboard',
             link: 'https://thepointofcorpuschristi.com/'
         },
-        {
-            id: 2,
-            category: 'client',
-            title: 'La Playa By The Bay',
-            imgSrc: 'assets/images/laplaya-dashboard.png',
-            role: 'Full Stack Developer - MERN Menu & Dashboard',
-            description: 'Online Ordering in Progress',
+        // {
+        //     id: 2,
+        //     category: 'client',
+        //     title: 'La Playa By The Bay',
+        //     imgSrc: 'assets/images/laplaya-dashboard.png',
+        //     role: 'Full Stack Developer - MERN Menu & Dashboard',
+        //     description: 'Online Ordering in Progress',
 
-            link: 'https://laplayabythebay.com/'
-        },
+        //     link: 'https://laplayabythebay.com/'
+        // },
         {
             id: 3,
             category: 'projects',
